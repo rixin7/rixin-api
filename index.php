@@ -1,11 +1,11 @@
 <?php
-ob_clean();
+error_reporting(0);
+ini_set('display_errors', '0');
+
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: *");
 header("Content-Type: application/json; charset=UTF-8");
-
-error_reporting(0);
 
 // Capture key from any parameter name
 $key = $_REQUEST['key'] 
@@ -16,7 +16,7 @@ $key = $_REQUEST['key']
     ?? $_REQUEST['license']
     ?? '';
 
-// Return multi-format success payload to satisfy different Smali JSON parsers
+// Output clean JSON only
 echo json_encode([
     "status"      => "success",
     "result"      => "success",
