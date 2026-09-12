@@ -7,11 +7,11 @@ header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 
 error_reporting(0);
 
-// Replace with your actual InfinityFree MySQL Database details
-$host = "sqlXXX.infinityfree.com"; // Your InfinityFree MySQL Hostname
-$user = "if0_XXXXXXX";             // Your InfinityFree MySQL Username
-$pass = "YOUR_DB_PASSWORD";        // Your InfinityFree MySQL Password
-$dbname = "if0_XXXXXXX_db";        // Your InfinityFree Database Name
+// Your exact InfinityFree Database Credentials
+$host = "sql112.infinityfree.com";
+$user = "if0_42883589";
+$pass = "RixinDBPass2026";
+$dbname = "if0_42883589_db"; // Check your InfinityFree Control Panel for the exact suffix after _42883589_
 
 $conn = new mysqli($host, $user, $pass, $dbname);
 
@@ -54,6 +54,5 @@ echo json_encode([
     "key" => $keyData['key_value'],
     "expires_at" => $keyData['expires_at'] ?? "Lifetime"
 ]);
-
 exit();
 ?>
